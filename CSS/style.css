@@ -58,7 +58,7 @@ section.menu{
     gap: 10px;
     margin-top: 1rem;
 
-}
+}  
 /* sobre mí_skills_hobbies_formación_proyectos_Contacto */
 .menu__list{
     display: flex;
@@ -70,7 +70,7 @@ section.menu{
     flex-grow: 1;
 }
 .menu__list__item__contato{
-    display:none
+    visibility: hidden
 
 } 
     
@@ -294,7 +294,7 @@ Utiliza las referencias de los breakpoints @media abajo */
 
 /*Tablet (se va a mostrar cuando los dispotivos tengas al menos 768px ancho)*/
 @media (min-width: 768px) {
-    .menu__list{
+    .menu .menu__list{ 
         display:none}
 /* Menú */
 
