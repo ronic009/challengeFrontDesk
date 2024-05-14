@@ -289,8 +289,9 @@ section.experience{ }
     align-self: center;
     font-size: 30px;
     margin-top:1rem;
+    margin-bottom: 1rem;
 
-    /*Formato a la Caja Flexible*/
+    /*Formato a la Caja Flexible A*/
 }
 .experiencie__box{         
     display:flex;
@@ -299,34 +300,43 @@ section.experience{ }
     margin-bottom:1rem;
     margin-top: 3rem;
     flex-wrap: wrap;
-    background-color: var(--cor-de-extra);
-     
+    background-color: var(--cor-de-extra);   
 }
+
+/*Formato a la Caja Flexible B*/
 
 .experience__info{
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;  
+}
+                                  /*#########*/
+.experience__title{
+    font-weight: bolder;
+    font-size: medium;
 }
 
+/*línea código HTML 205*/
 .experience__description button{
  margin:10px;
  padding: 10px;
  border-radius: 5px;
- background: #1e1ef3ab;
+ background: #0ea566a6;
  color: #F5F5F5;
 }
 
 .experience__description button:hover{
-    background: #91e7d9;
+    background: #651a80;
     color: #000;
 }
 
 .experiencie__box img{
     width: 500px;
     padding-right: 20px;
+    background-color: violet;
+    text-align: center;
     
 }
 
@@ -335,11 +345,15 @@ section.experience{ }
     justify-content: space-between;
     padding: 50px;
     flex-wrap: wrap;
+    background-color: var(--cor-de-extra); 
+    margin-bottom:1rem;
+    margin-top: 3rem;
 }
 
 .experience__box img{
     width: 500px;
     padding-right: 20px;
+    text-align: center;
 }
 
 .experience__info-container{
@@ -382,6 +396,8 @@ section.experience{ }
     justify-content: space-between;
     padding: 50px;
     flex-wrap: wrap;
+    margin-bottom:1rem;
+    margin-top: 3rem;
 }
 
 .experience__box img{
@@ -394,21 +410,61 @@ section.experience{ }
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-
 }
-
 
 /*Contacto*/
 
-section.formcontato{
+section.formcontato{}
+
+.formcontato__text{
+    width: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 
 }
+
+.formcontato__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.formcontato__form input, textarea{
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 4px 4px #000;
+}
+
+.formcontato__botao{
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: .5s;
+    box-shadow: 4px 4px #000;
+}
+
+.formcontato__botao:hover{
+    background: #7fd1f7;
+    
+}    
+
 
 /*footeer*/
 
-section.footer{
-   
-}
+section.footer{}
+
+.footer__rodape{
+    margin-top: 40px; 
+    display: flex;
+ }
+ 
+ .footer__rodape p {
+  padding: 5px;
+ }
 
 /* Vamos a desafiarnos trabajando con responsividad?
 Utiliza las referencias de los breakpoints @media abajo */
