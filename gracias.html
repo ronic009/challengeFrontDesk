@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[⚠️ Suspicious Content] <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -12,9 +12,11 @@
             align-items: center;
             height: 100vh;
             text-align: center; 
-            padding: 50px; 
+            padding: 20px; 
             font-family: 'Raleway', sans-serif; 
             background-color: #F5F5F5;
+            flex-direction: column;
+            gap: 2rem;
         }
         .container {
             max-width: 600px;
@@ -42,13 +44,46 @@
         a:hover {
             background-color: #1e5fa5;
         }
+        /* Estilos para el selector de idioma en esta página */
+        .language-selector {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .language-selector button {
+            background-color: transparent;
+            border: 1px solid #C8C8C8;
+            color: #464646;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        .language-selector button:hover {
+            background-color: #EAF2FD;
+            border-color: #2A7AE4;
+        }
+        .language-selector button.active {
+            background-color: #2A7AE4;
+            color: #fff;
+            border-color: #2A7AE4;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>¡Gracias por tu mensaje!</h1>
-        <p>He recibido tu formulario correctamente y me pondré en contacto contigo tan pronto como sea posible.</p>
-        <a href="/">Volver a la página principal</a>
+        <h1 data-key="thanks_title">¡Gracias por tu mensaje!</h1>
+        <p data-key="thanks_p1">He recibido tu formulario correctamente y me pondré en contacto contigo tan pronto como sea posible.</p>
+        <a href="/" data-key="thanks_back_btn">Volver a la página principal</a>
     </div>
+
+    <!-- Selector de idioma también en la página de gracias -->
+    <div class="language-selector">
+        <button id="lang-es" class="active">ES</button>
+        <button id="lang-en">EN</button>
+    </div>
+
+    <!-- Script para manejar la lógica de traducción -->
+    <script src="language.js"></script>
 </body>
 </html>

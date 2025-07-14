@@ -420,3 +420,44 @@ body {
         text-align: center;
     }
 }
+
+ /* Estilos para el Selector de Idioma */
+.language-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 2rem; /* Ajusta el espacio según sea necesario */
+}
+
+.language-selector button {
+    background-color: transparent;
+    border: 1px solid var(--cor-borda);
+    color: var(--cor-de-link);
+    padding: 0.5rem 0.8rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.language-selector button:hover {
+    background-color: var(--cor-de-fundo-alt);
+    border-color: var(--cor-primaria);
+}
+
+.language-selector button.active {
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border-color: var(--cor-primaria);
+}
+
+/* Ajustes responsivos para el selector */
+@media (max-width: 768px) {
+    .menu nav {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .language-selector {
+        margin-left: 0;
+    }
+}
