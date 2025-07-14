@@ -1,578 +1,422 @@
-
-
-/*CSS Reset / Normalize*/
-/*@import url("reset.css");*/
-
-:root{
-    /* Inserta la variable de los otros colores inspeccionando el exemplo de figma */
-    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
-   --cor-de-fundo: #F5F5F5;
-   --cor-de-link: #000;
-    --cor-de-texto:#2A7AE4 ;
-    --cor-de-extra:gray;
-    --cor-de-sobremim:#EAF2FD;
+:root {
+    --cor-de-fundo: #F5F5F5;
+    --cor-de-link: #464646;
+    --cor-primaria: #2A7AE4;
+    --cor-de-fundo-alt: #EAF2FD;
+    --cor-texto-secundario: #a2a2a2;
+    --cor-borda: #C8C8C8;
+    --cor-error: #d9534f;
+    --cor-exito: #5cb85c;
+    --sombra: 2px 2px 5px rgba(0,0,0,0.1);
+    font-family: 'Raleway', sans-serif;
 }
 
-body{
+body {
     background-color: var(--cor-de-fundo);
     color: var(--cor-de-link);
     overflow-x: hidden;
+    line-height: 1.5;
 }
 
-ol, ul,li {
-    list-style: none;
+/* Estructura General */
+.tudo {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-a{
+
+/* Sección Menu */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.menu__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu__logo {
+    width: 24px;
+}
+
+.menu__list {
+    display: flex;
+    gap: 2rem;
+}
+
+.menu__list__item a {
     text-decoration: none;
     color: var(--cor-de-link);
+    font-weight: 500;
+    position: relative;
 }
 
-.skills__box{
+.menu__list__item a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--cor-primaria);
+    transition: width 0.3s;
+}
+
+.menu__list__item a:hover::after {
+    width: 100%;
+}
+
+.menu__list__item__contato {
+    font-weight: 700;
+    color: var(--cor-primaria);
+    display: none; /* Se mostrará en vistas móviles */
+}
+
+/* Sección Title */
+.title__div {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    
-}
-
-/*En este desafío nosostros gustaríamos que ustedes intentaran utilizar la metodología BEM. 
-
-Lo que es el BEM?
-
-BEM (Bloque, Elemento, Modificador) es un enfoque basado en componentes para el 
-desarrollo web. La idea detrás de esto es dividir la interfaz de usuario en bloques
-independientes. Esto hace que el desarrollo de la interfaz sea fácil y rápido, incluso
-con una interfaz de usuario compleja, y permite la reutilización del código existente sin copiar y pegar.
-
-Enlace de la documentación oficial!
-https://en.bem.info/methodology/quick-start/*/
-
-/*Sección Menu*/
-
-section.menu{}
-
-.menu{
-    display: flex ;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
-    }
-/* estrellitas y nombre*/
-.menu__header{
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.title__container {
+    flex-basis: 60%;
+}
+
+.title__bio {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.title__subsection {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.title__network {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-
-}  
-/* sobre mí_skills_hobbies_formación_proyectos_Contacto */
-.menu__list{
-    display: inline-flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 16px;
-    gap: 20px;
-    align-items: center;
-    margin-top: 1.5rem;
-    flex-grow: 1;
-    padding: auto;
-    
-}
-.menu__list__item__contato{
-    visibility: hidden
-
-} 
-    
-/*Sección Title*/
-
-section.title{
-}
-.title{
-    display:flex;
-    flex-wrap:wrap;
-    
-}
-.title__div{
-    display: flex;
-    flex-direction: row-reverse;
-    height: auto;
-    width: auto;
-    margin-top: 2rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    gap: 10px;
-    align-items: center;
+    gap: 1.5rem;
+    padding: 0;
 }
 
-/*mifoto*/
-.title__profile{
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    padding-left: 15%;
+.title__network__item a {
+    font-weight: 500;
+    color: var(--cor-primaria);
+}
+
+.title__profile {
+    max-width: 300px;
+    border-radius: 50%;
+    box-shadow: var(--sombra);
+}
+
+/* Sección About */
+.about {
+    background-color: var(--cor-de-fundo-alt);
+    padding: 2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+.about__container {
+    max-width: 800px;
+    margin: 0 auto;
     text-align: center;
-    border-radius: 20px;
-}
-
-/* Hola, mi nombre es Ron*/
-.title__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-basis: auto;
-    gap:20%;
-}
-.title__bio{
-    font-size: 30px    
-}
-.title__subsection{
-    margin-top: 1rem;
-    font-size: 20px;
-    color: var(--cor-de-texto);
-    flex-shrink: 1;
-}
-/* Github, link, Inst, CV */
-.title__network{
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
-}
-
-/*Sección About*/
-
-section.about{
-
-}
-/*este bloque incluye mi firma */
-
-.about{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 2rem 4rem 2rem 4rem;
-    background-color: var(--cor-de-sobremim);
-    color: white;
-    padding: 20px 20px 20px 20px;
-    border-radius: 10px;
-/*sobre mí*/
 }
 .about__title{
-    align-self: center;
-    font-size: 30px;
-    color: var(--cor-de-link);
-    margin-bottom: 2%;
-    
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.about__signature {
+    max-width: 200px;
+    margin-top: 1rem;
 }
 
-.about__paragraph{
-    display:flex
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 20px;
-    color: var(--cor-de-link);
-    gap: 15px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;    
+/* Secciones Skills & Hobbies (usando Grid) */
+.skills, .hobbies {
+    padding: 2rem 0;
 }
 
-
-/*Sección Hobbies & Skills*/
-section.hobbies{}
-
-.skills{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 60px;
-    flex-wrap: wrap;
-    width: auto;
-}
-
-.skills__title{
-    align-self: center;
-    font-size: 30px;
-    margin-top:1rem
-}
-
-.skills__line{
-    display: flex;
-    gap: 50px;
-    flex-wrap: wrap;
-    align-self: center;
-    padding: 20px 10px 10px 10px;
-    background-color: var(--cor-de-extra);
-    border-radius: 10px;
-    margin-top: 1rem;   
-}
-
-.skills__box{
-    flex-basis: auto;
-    text-align: center;   
-    
-}
-
-.hobbies{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 60px;
-    width: auto;
-}
-.hobbies__title{
-    align-self: center;
-    font-size: 30px;
-    margin-top:1rem;
-}
-
-.hobbies__line{
-    display: flex;
-    justify-content: center;
-    gap: 50px;
-    flex-wrap: wrap;
-    align-self: center;
-    padding: 20px 10px 10px 10px;
-    background-color: var(--cor-de-extra);
-    border-radius: 10px;
-    margin-top: 1rem; 
-}
-
-
-/* Experiencia Académica*/
-
-section.academic{}
-
-.academic{
-    width: auto;
-    margin-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-.academic__title{
-    align-self: center;
-    font-size: 30px;
-    margin-top:1rem;
-}
-
-.academic__courses__box{
-    width: auto;
-    display: inline-flex;
-    padding: 40px;
-    align-content: space-between;
-}
-
-.academic__courses__list img{
-    width: 190px;
-}
-
-
-/* Experiencia Profesional*/
-section.experience{ }
-
-.experience{
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-    justify-content: space-between;
-    align-items: center;
-   }
-
-.experience__section__title{
-    align-self: center;
-    font-size: 30px;
-    margin-top:1rem;
-    margin-bottom: 1rem;
-
-    /*Formato a la Caja Flexible A*/
-}
-.experiencie__box{         
-    display:flex;
-    justify-content: space-between;
-    padding: 50px;
-    margin-bottom:1rem;
-    margin-top: 3rem;
-    flex-wrap: wrap;
-    background-color: var(--cor-de-extra);   
-}
-
-/*Formato a la Caja Flexible B*/
-
-.experience__info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    flex-wrap: wrap;  
-}
-                                  /*#########*/
-.experience__title{
-    font-weight: bolder;
-    font-size: medium;
-}
-
-/*línea código HTML 205*/
-.experience__description button{
- margin:10px;
- padding: 10px;
- border-radius: 5px;
- background: #0ea566a6;
- color: #F5F5F5;
-}
-
-.experience__description button:hover{
-    background: #651a80;
-    color: #000;
-}
-
-.experiencie__box img{
-    width: 500px;
-    padding-right: 20px;
-    background-color: violet;
+.skills__title, .hobbies__title {
     text-align: center;
-    
-}
-
-.experience__box{
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    flex-wrap: wrap;
-    background-color: var(--cor-de-extra); 
-    margin-bottom:1rem;
-    margin-top: 3rem;
-}
-
-.experience__box img{
-    width: 500px;
-    padding-right: 20px;
-    text-align: center;
-}
-
-.experience__info-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-}
-
-.experience__info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    flex-wrap: wrap;
-}
-
-.experience__description button{
- margin:10px;
- padding: 10px;
- border-radius: 5px;
- background: #1e1ef3;
- color: #F5F5F5;
-}
-
-.experience__description button:hover{
-    background: #91e7d9;
-    color: #000;
-}
-
-.experiencie__box img{
-    width: 500px;
-    padding-right: 20px;
-    
-}
-
-.experience__box{
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
-    flex-wrap: wrap;
-    margin-bottom:1rem;
-    margin-top: 3rem;
-}
-
-.experience__box img{
-    width: 500px;
-    padding-right: 20px;
-}
-
-.experience__info-container{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
-
-/*Contacto*/
-
-section.formcontato{}
-
-.formcontato__text{
-    width: auto;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    align-content: space-evenly;
-    margin-top: 2rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
-    font-weight: bolder;
 }
 
-.formcontato__title{
-    font-size: 30px;
-    margin-top:1rem;
+.skills__line, .hobbies__line {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.skills__box, .hobbies__box {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.skills__box ul, .hobbies__box ul {
+    padding: 0;
+}
+
+.skills__box:hover, .hobbies__box:hover {
+    transform: translateY(-5px);
+}
+
+.skills__img, .hobbies__img {
     margin-bottom: 1rem;
 }
 
-.formcontato__form{
+.skills__img img, .hobbies__img img {
+    max-width: 50px;
+}
+
+/* Formación Académica */
+.academic {
+    padding: 2rem 0;
+}
+.academic__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.academic__courses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+.academic__courses__list {
+    padding: 0;
+}
+.academic__courses__item__img img {
+    max-width: 120px;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+/* Experiencia Profesional */
+.experience {
+    padding: 2rem 0;
+}
+.experience__section__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+.experience__box {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+.experience__box:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.experience__img {
+    max-width: 40%;
+    border-radius: 8px;
+}
+
+.experience__info {
+    flex-grow: 1;
+}
+
+.experience__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.experience__text {
+    margin-bottom: 1rem;
+}
+
+.experience__description a button {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid var(--cor-primaria);
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-right: 1rem;
+}
+.experiencia__botao--repo {
+    background-color: transparent;
+    color: var(--cor-primaria);
+}
+.experience__botao--demo {
+    background-color: var(--cor-primaria);
+    color: #fff;
+}
+.experiencia__botao--repo:hover {
+    background-color: var(--cor-primaria);
+    color: #fff;
+}
+
+
+/* Contacto */
+.formcontato {
+    padding: 2rem 0;
+    background-color: var(--cor-de-fundo-alt);
+}
+.formcontato__contacto {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.formcontato--esquerda {
+    display: block;
+}
+.formcontato__img {
+    max-width: 400px;
+}
+.formcontato__text {
+    width: 100%;
+}
+.formcontato__title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.formcontato__subtext {
+    margin-bottom: 1rem;
+}
+.formcontato__form {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+}
+.formcontato__input-container {
+    position: relative;
 }
 
-.formcontato__form input, textarea{
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 4px 4px #000;
+.formcontato__input, .formcontato__textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box;
 }
-
-.formcontato__botao{
-    margin: 10px;
-    padding: 15px;
-    border-radius: 10px;
-    transition: .5s;
-    box-shadow: 4px 4px #000;
+.formcontato__input:focus, .formcontato__textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
 }
-
-.formcontato__botao:hover{
-    background: #7fd1f7;
-    
-}    
-
-/*footeer*/
-
-section.footer{}
-
-.footer__rodape{
-    margin-top: 40px; 
-    display: flex;
- }
- 
- .footer__rodape p {
-  padding: 5px;
- }
-
-/* Vamos a desafiarnos trabajando con responsividad?
-Utiliza las referencias de los breakpoints @media abajo */
-
-
-/*Tablet (se va a mostrar cuando los dispotivos tengas al menos 768px ancho)*/
-@media (max-width: 768px) {
-
-/* Menú */
-.menu__header{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-}
-
-.menu__title h3{
-    margin-left: 60px;
-}
-
-.menu__list{ 
-    display:none
-}
-
-.menu__list__item__contato{
-        display: flex;
-        flex-direction: column;
-        visibility: visible;
-    }
-/*title*/
-
-.title__div{
-    justify-content: center;
-}
-
-.title__bio{
-    width: auto;
-    margin: 20px;
-
-}
-
-.title__subsection{
-    width: auto;
-    margin: 10px;
-}
-
-.about__paragraph{
-    margin-left: 10px;
-}
-/*Skills*/
-
-/*Hobbies*/
-
-/*Formación Académica*/
-
-/*Experiencia Profesional*/
-.formcontacto__subtext{
-    margin-left: 10px;
-    line-height: 1.3;
-    }
-}
-
-/*Mobile*/
-@media (max-width: 425px) {
-    
-/*Menu*/
-
-.menu__header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.menu__list{
+.formcontato__input-container label {
     display: none;
 }
-/*Titulo*/
-.title__div{
+
+.input-message-error {
+    color: var(--cor-error);
+    font-size: 0.8rem;
+    display: none;
+}
+
+/* Estilos de validación */
+.formcontato__input.invalid, .formcontato__textarea.invalid {
+    border-color: var(--cor-error);
+}
+.formcontato__input.valid, .formcontato__textarea.valid {
+    border-color: var(--cor-exito);
+}
+
+
+.formcontato__botao {
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--cor-primaria);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.formcontato__botao:hover {
+    background-color: #1e5fa5;
+}
+
+.form-messages {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    display: none;
+}
+.form-messages.success {
+    background-color: var(--cor-exito);
+    color: #fff;
+}
+.form-messages.error {
+    background-color: var(--cor-error);
+    color: #fff;
+}
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer__rodape {
+    display: flex;
     justify-content: center;
+    gap: 1rem;
 }
 
-.title__bio{
-    width: auto;
-    margin: 20px;
 
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .menu__list {
+        display: none;
+    }
+    .menu__list__item__contato {
+        display: block;
+    }
+    .title__div {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .title__network {
+        justify-content: center;
+    }
+    .experience__box, .experience__box:nth-child(odd) {
+        flex-direction: column;
+        text-align: center;
+    }
+    .experience__img {
+        max-width: 80%;
+    }
+    .formcontato--esquerda {
+        display: none;
+    }
 }
 
-.title__subsection{
-    width: auto;
-    margin: 10px;
-}
-/*Sección sobre mi*/
-
-/*Skills*/
-
-/*Hobbies*/
- 
-/*Formación Académica*/
-
-/*Experiencia Profesional*/
-
- /*Contacto*/
-
- .formcontacto__subtext{
-     margin-left: 10px;
- }
-
-/*Footer*/
-
+@media (max-width: 425px) {
+    .tudo {
+        width: 95%;
+    }
+    .title__bio {
+        font-size: 2rem;
+    }
+    .menu__header {
+        flex-direction: column;
+        text-align: center;
+    }
 }
