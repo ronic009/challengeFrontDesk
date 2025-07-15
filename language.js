@@ -85,10 +85,10 @@ const translations = {
     hobbies_title: "Hobbies",
     // Academic Training
     academic_title: "Academic Training",
-    academic_course1_title: "Data Analysis",
-    academic_course2_title: "UX Design Training",
-    academic_course3_title: "Postgraduate in Design",
-    academic_course3_subtitle: "In progress - UFRJ",
+    academic_course1_title: "Environmental Engineering",
+    academic_course2_title: "Front-End Devolopment",
+    academic_course3_title: "Nanodegree in Digital Marketing",
+    academic_course3_subtitle: "In progress - 2025 OneTen & Accenture Scholarship Program",
     // Professional Experience
     experience_title: "Professional Experience",
     experience_project1_title: "Text Encryptor",
