@@ -1,3 +1,4 @@
+/* Paleta de colores y fuentes principales para todo el sitio */
 :root {
     --cor-de-fundo: #F5F5F5;
     --cor-de-link: #464646;
@@ -11,6 +12,7 @@
     font-family: 'Raleway', sans-serif;
 }
 
+/* Estilos base para el cuerpo de la página */
 body {
     background-color: var(--cor-de-fundo);
     color: var(--cor-de-link);
@@ -18,14 +20,14 @@ body {
     line-height: 1.5;
 }
 
-/* Estructura General */
+/* Contenedor principal que centra todo el contenido */
 .tudo {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Sección Menu */
+/* --- SECCIÓN DEL MENÚ DE NAVEGACIÓN --- */
 .menu {
     display: flex;
     justify-content: space-between;
@@ -55,6 +57,7 @@ body {
     position: relative;
 }
 
+/* Efecto de subrayado animado para los enlaces del menú */
 .menu__list__item a::after {
     content: '';
     position: absolute;
@@ -70,13 +73,14 @@ body {
     width: 100%;
 }
 
+/* El enlace de contacto que aparece en móviles */
 .menu__list__item__contato {
     font-weight: 700;
     color: var(--cor-primaria);
-    display: none; /* Se mostrará en vistas móviles */
+    display: none;
 }
 
-/* Sección Title */
+/* --- SECCIÓN DE TÍTULO / HÉROE --- */
 .title__div {
     display: flex;
     align-items: center;
@@ -117,7 +121,7 @@ body {
     box-shadow: var(--sombra);
 }
 
-/* Sección About */
+/* --- SECCIÓN SOBRE MÍ --- */
 .about {
     background-color: var(--cor-de-fundo-alt);
     padding: 2rem;
@@ -138,7 +142,7 @@ body {
     margin-top: 1rem;
 }
 
-/* Secciones Skills & Hobbies (usando Grid) */
+/* --- SECCIONES DE SKILLS Y HOBBIES --- */
 .skills, .hobbies {
     padding: 2rem 0;
 }
@@ -149,6 +153,7 @@ body {
     margin-bottom: 2rem;
 }
 
+/* Usamos Grid para que las cajas se ajusten solas */
 .skills__line, .hobbies__line {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -180,33 +185,81 @@ body {
     max-width: 50px;
 }
 
-/* Formación Académica */
+/* --- SECCIÓN DE FORMACIÓN ACADÉMICA (CORREGIDA) --- */
+/* Aquí apliqué los cambios para centrar perfectamente el contenido de las tarjetas */
 .academic {
     padding: 2rem 0;
 }
+
 .academic__title {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
 }
+
 .academic__courses {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-    text-align: center;
-}
-.academic__courses__list {
-    padding: 0;
-}
-.academic__courses__item__img img {
-    max-width: 120px;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: var(--sombra);
 }
 
-/* Experiencia Profesional */
+/* La caja que contiene cada tarjeta de formación */
+.academic__courses__box {
+    background-color: #fff;
+    box-shadow: var(--sombra);
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; /* Esto es clave para que el enlace hijo ocupe todo el espacio */
+}
+
+.academic__courses__box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(42, 122, 228, 0.2);
+}
+
+/* El enlace que envuelve todo el contenido de la tarjeta */
+.academic__courses__link {
+    text-decoration: none;
+    color: inherit;
+    width: 100%;
+    padding: 2rem 1.5rem;
+    /* Usamos Flexbox para centrar el contenido (la lista <ul>) vertical y horizontalmente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* La lista <ul> ahora solo organiza su contenido interno */
+.academic__courses__list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; /* Espacio uniforme entre logo, título y subtítulo */
+}
+
+/* Ajustes para el logo, título y subtítulo para un centrado perfecto */
+.academic__courses__item__img img {
+    max-height: 80px;
+    width: auto;
+}
+
+.academic__courses__item__title h4 {
+    font-weight: 700;
+    margin: 0;
+}
+
+.academic__courses__item__subtitle p {
+    font-size: 0.9rem;
+    color: var(--cor-de-link);
+    margin: 0;
+}
+
+/* --- SECCIÓN DE EXPERIENCIA PROFESIONAL --- */
 .experience {
     padding: 2rem 0;
 }
@@ -226,6 +279,7 @@ body {
     box-shadow: var(--sombra);
 }
 
+/* Alterna la dirección de las cajas para un diseño más dinámico */
 .experience__box:nth-child(odd) {
     flex-direction: row-reverse;
 }
@@ -269,8 +323,7 @@ body {
     color: #fff;
 }
 
-
-/* Contacto */
+/* --- SECCIÓN DE CONTACTO --- */
 .formcontato {
     padding: 2rem 0;
     background-color: var(--cor-de-fundo-alt);
@@ -327,7 +380,7 @@ body {
     display: none;
 }
 
-/* Estilos de validación */
+/* Estilos para la validación del formulario */
 .formcontato__input.invalid, .formcontato__textarea.invalid {
     border-color: var(--cor-error);
 }
@@ -366,8 +419,7 @@ body {
     color: #fff;
 }
 
-
-/* Footer */
+/* --- SECCIÓN DEL FOOTER --- */
 .footer {
     text-align: center;
     padding: 2rem 0;
@@ -379,9 +431,8 @@ body {
     gap: 1rem;
 }
 
-
-/* Responsive Design */
-
+/* --- DISEÑO RESPONSIVO --- */
+/* Para tablets */
 @media (max-width: 768px) {
     .menu__list {
         display: none;
@@ -408,6 +459,7 @@ body {
     }
 }
 
+/* Para móviles */
 @media (max-width: 425px) {
     .tudo {
         width: 95%;
@@ -421,11 +473,12 @@ body {
     }
 }
 
- /* Estilos para el Selector de Idioma */
+/* --- ESTILOS ADICIONALES --- */
+/* Estilos para el Selector de Idioma */
 .language-selector {
     display: flex;
     gap: 0.5rem;
-    margin-left: 2rem; /* Ajusta el espacio según sea necesario */
+    margin-left: 2rem;
 }
 
 .language-selector button {
@@ -460,4 +513,60 @@ body {
     .language-selector {
         margin-left: 0;
     }
+}
+
+/* Estilos para el banner de actualización */
+.update-banner {
+    background-color: var(--cor-de-fundo-alt);
+    border: 1px dashed var(--cor-primaria);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+    transition: background-color 0.3s, border-color 0.3s; /* Corregí y moví la transición aquí */
+}
+
+.update-banner p {
+    font-size: 1.2rem;
+    color: var(--cor-de-link);
+    font-weight: 500;
+}
+
+.update-banner:hover {
+    background-color: #d4e7ff;
+    border-color: #0056b3;
+    cursor: pointer;
+}
+
+/* Estilos para enlaces dentro de un párrafo */
+.inline-link {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    transition: color 0.3s;
+}
+
+.inline-link:hover {
+    color: #0056b3;
+}
+
+/* Subrayado animado para el enlace */
+.inline-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0056b3;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.inline-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }

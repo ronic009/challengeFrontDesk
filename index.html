@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -62,7 +62,16 @@
                 <div class="about__container">
                     <h3 class="about__title" data-key="about_title">Sobre mí</h3>
                     <p class="about__paragraph" data-key="about_p1">En 2024, he incursionado en la Industria de Tecnología para ofertar mis servicios profesionales y la creación de empresa.</p>
-                    <p class="about__paragraph" data-key="about_p2">Me gradué como Ingeniero Ambiental y cuento con 10 años de experiencia laboral en el sector público, privado y cooperación internacional en roles relacionados con gestión medio ambiental, desarrollo sostenible, gestión empresarial y emprendedurismo. En 2022 fundé el emprendimiento "The Party Wagon", el cual fue un bar Móvil y Bubble Tea Shop. En 2023, fundé una escuela de Programación para niños "Algorithmics School-Chinandega Branch".</p>
+                    
+                    <!-- PÁRRAFO CORREGIDO: Se divide en spans para no sobreescribir los enlaces -->
+                    <p class="about__paragraph">
+                        <span data-key="about_p2_part1">Me gradué como Ingeniero Ambiental y cuento con 10 años de experiencia laboral en el sector público, privado y cooperación internacional en roles relacionados con gestión medio ambiental, desarrollo sostenible, gestión empresarial y emprendedurismo. En 2022 fundé el emprendimiento </span>
+                        <a href="https://www.facebook.com/TPWagon" target="_blank" rel="noopener noreferrer" class="inline-link">"The Party Wagon"</a>
+                        <span data-key="about_p2_part2"> y en 2023 una escula de Programación para niños </span>
+                        <a href="https://algorithmicschool.com/es/escuelas" target="_blank" rel="noopener noreferrer" class="inline-link">"Algorithmics School-Chinandega Branch"</a>
+                        <span data-key="about_p2_part3">.</span>
+                    </p>
+
                     <img src="assets/Asset 1-8.png" class="about__signature" alt="Firma de Ronald Ramírez">
                 </div>
             </section>
@@ -91,35 +100,65 @@
             <section class="academic" id="formacion">
                 <h2 class="academic__title" data-key="academic_title">Formación académica</h2>
                 <div class="academic__courses">
-                    <div class="academic__courses__box"><ul class="academic__courses__list"><li class="academic__courses__item__img"><img src="assets/UCA.png" alt="Logo UCA"></li><li class="academic__courses__item__title"><h4 data-key="academic_course1_title">Ingeniería en Calidad Ambiental</h4></li><li class="academic__courses__item__subtitle"><p>2010 - UFPR</p></li></ul></div>
-                    <div class="academic__courses__box"><ul class="academic__courses__list"><li class="academic__courses__item__img"><img src="assets/alura_logo.png" alt="Logo Udacity"></li><li class="academic__courses__item__title"><h4 data-key="academic_course2_title">Formación en Front-End Development</h4></li><li class="academic__courses__item__subtitle"><p>2024 - Alura</p></li></ul></div>
-                    <div class="academic__courses__box"><ul class="academic__courses__list"><li class="academic__courses__item__img"><img src="assets/Udacity.png" alt="Logo Alura"></li><li class="academic__courses__item__title"><h4 data-key="academic_course3_title">Nanogrado en Marketing Digital</h4></li><li class="academic__courses__item__subtitle"><p data-key="academic_course3_subtitle">En curso - Udacity</p></li></ul></div>
+                    <div class="academic__courses__box">
+                       <a href="https://www.uca.edu.ni/" target="_blank" rel="noopener noreferrer" class="academic__courses__link">
+                            <ul class="academic__courses__list">
+                                <li class="academic__courses__item__img"><img src="assets/UCA.png" alt="Logo UCA"></li>
+                                <li class="academic__courses__item__title"><h4 data-key="academic_course1_title">Ingeniería en Calidad Ambiental</h4></li>
+                                <li class="academic__courses__item__subtitle"><p>2010 - Bachelor's Degree</p></li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="academic__courses__box">
+                        <a href="https://www.oracle.com/latam/education/oracle-next-education/" target="_blank" rel="noopener noreferrer" class="academic__courses__link">
+                            <ul class="academic__courses__list">
+                                <li class="academic__courses__item__img"><img src="assets/alura_logo.png" alt="Logo Alura"></li>
+                                <li class="academic__courses__item__title"><h4 data-key="academic_course2_title">Formación en Front-End Development</h4></li>
+                                <li class="academic__courses__item__subtitle"><p>2024 - Alura & ONE - Oracle Next Education</p></li>
+                            </ul>
+                        </a>
+                    </div>
+                    <div class="academic__courses__box">
+                        <a href="https://www.udacity.com/scholarships/oneten-bit-scholarship" target="_blank" rel="noopener noreferrer" class="academic__courses__link">
+                            <ul class="academic__courses__list">
+                                <li class="academic__courses__item__img"><img src="assets/Udacity.png" alt="Logo Udacity"></li>
+                                <li class="academic__courses__item__title"><h4 data-key="academic_course3_title">Nanogrado en Marketing Digital</h4></li>
+                                <li class="academic__courses__item__subtitle"><p data-key="academic_course3_subtitle">En curso - Udacity - OneTen & Accenture Scholarship Program</p></li>
+                            </ul>
+                        </a>
+                    </div>
                 </div>
             </section>
             <section class="experience" id="xp">
                 <h2 class="experience__section__title" data-key="experience_title">Experiencia Profesional</h2>
-                <div class="experience__box">
-                    <img class="experience__img" src="assets/decod_print.png" alt="Screenshot del proyecto Encriptador de texto">
-                    <div class="experience__info">
-                        <h3 class="experience__title" data-key="experience_project1_title">Encriptador de texto</h3>
-                        <p class="experience__text" data-key="experience_project1_desc">Challenge Alura Codificador</p>
-                        <div class="experience__description">
-                            <a href="https://github.com/alura-challenges/challenge-one-encriptador-latam" class="experience__repo"><button class="experiencia__botao--repo" data-key="experience_repo_btn">Repositorio</button></a>
-                            <a href="#" class="experience__demo"><button class="experience__botao--demo" data-key="experience_demo_btn">Ver demo</button></a>
-                        </div>
-                    </div>
+                <div class="update-banner">
+                    <p data-key="experience_update_notice">Bajo actualización. Por favor revisa en un par de días.</p>
                 </div>
-                <div class="experience__box">
-                    <img class="experience__img" src="assets/forca_print.png" alt="Screenshot del Juego del Ahorcado">
-                    <div class="experience__info">
-                        <h3 class="experience__title" data-key="experience_project2_title">Juego del Ahorcado</h3>
-                        <p class="experience__text" data-key="experience_project2_desc">Challenge Oracle</p>
-                        <div class="experience__description">
-                            <a href="https://github.com/alura-challenges/challenge-one-juego-ahorcado" class="experience__repo"><button class="experiencia__botao--repo" data-key="experience_repo_btn">Repositorio</button></a>
-                            <a href="#" class="experience__demo"><button class="experience__botao--demo" data-key="experience_demo_btn">Ver demo</button></a>
-                        </div>
-                    </div>
-                </div>
+                 <!-- Contenido original comentado para ocultarlo temporalmente -->
+                 <!--
+                 <div class="experience__box">
+                     <img class="experience__img" src="assets/decod_print.png" alt="Screenshot del proyecto Encriptador de texto">
+                     <div class="experience__info">
+                         <h3 class="experience__title" data-key="experience_project1_title">Encriptador de texto</h3>
+                         <p class="experience__text" data-key="experience_project1_desc">Challenge Alura Codificador</p>
+                         <div class="experience__description">
+                             <a href="https://github.com/alura-challenges/challenge-one-encriptador-latam" class="experience__repo"><button class="experiencia__botao--repo" data-key="experience_repo_btn">Repositorio</button></a>
+                             <a href="#" class="experience__demo"><button class="experience__botao--demo" data-key="experience_demo_btn">Ver demo</button></a>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="experience__box">
+                     <img class="experience__img" src="assets/forca_print.png" alt="Screenshot del Juego del Ahorcado">
+                     <div class="experience__info">
+                         <h3 class="experience__title" data-key="experience_project2_title">Juego del Ahorcado</h3>
+                         <p class="experience__text" data-key="experience_project2_desc">Challenge Oracle</p>
+                         <div class="experience__description">
+                             <a href="https://github.com/alura-challenges/challenge-one-juego-ahorcado" class="experience__repo"><button class="experiencia__botao--repo" data-key="experience_repo_btn">Repositorio</button></a>
+                             <a href="#" class="experience__demo"><button class="experience__botao--demo" data-key="experience_demo_btn">Ver demo</button></a>
+                         </div>
+                     </div>
+                 </div>
+                 -->
             </section>
             <section class="formcontato" id="contacto">
                 <div class="formcontato__contacto">
@@ -156,7 +195,7 @@
         <footer class="footer">
             <div class="footer__rodape">
                 <p data-key="footer_developed_by">Desarrollado por Ronald Ramírez F.</p>
-                <p>&copy; 2024</p>
+                <p>&copy; 2025</p>
             </div>
         </footer>
     </div>

@@ -1,4 +1,4 @@
-// Objeto que contiene todas las traducciones
+ // Objeto que contiene todas las traducciones
 const translations = {
   es: {
     // Menú y Encabezado
@@ -10,15 +10,17 @@ const translations = {
     menu_contact_email: "rramirezfiallos@hotmail.com",
     menu_contact_link: "Contacto",
     title_bio: "Hola, mi nombre es Ron y soy un entusiasta de la tecnología y el aprendizaje constante",
-    title_subsection: "Ingeniero en Calidad Ambiental, con pasión por la educación constante, la tecnología, el empresarismo y los deportes de contacto como las mma, el boxeo y el fútbol.",
+    title_subsection: "Ingeniero en Calidad Ambiental, con pasión por la educación constante, entusiasta de la tecnología, el empresarismo y los deportes de contacto.",
     title_github: "Github",
     title_linkedin: "Linkedin",
     title_instagram: "Instagram",
     title_resume: "Currículo",
-    // Sobre Mí
+    // Sobre Mí (con claves divididas)
     about_title: "Sobre mí",
     about_p1: "En 2024, he incursionado en la Industria de Tecnología para ofertar mis servicios profesionales y la creación de empresa.",
-    about_p2: 'Me gradué como Ingeniero Ambiental y cuento con 10 años de experiencia laboral en el sector público, privado y cooperación internacional en roles relacionados con gestión medio ambiental, desarrollo sostenible, gestión empresarial y emprendedurismo. En 2022 fundé el emprendimiento "The Party Wagon", el cual fue un bar móvil y tienda de Té de Burbujas (Boba Tea). En 2023, fundé una escuela de Programación para niños "Algorithmics School-Chinandega Branch".',
+    about_p2_part1: 'Me gradué como Ingeniero Ambiental y cuento con 10 años de experiencia laboral en el sector público, privado y cooperación internacional en roles relacionados con gestión medio ambiental, desarrollo sostenible, gestión empresarial y emprendedurismo. En 2022 fundé el emprendimiento ',
+    about_p2_part2: ' y en 2023 una escula de Programación para niños ',
+    about_p2_part3: '.',
     // Skills & Hobbies
     skills_title: "Skills",
     hobbies_title: "Hobbies",
@@ -27,15 +29,10 @@ const translations = {
     academic_course1_title: "Ingeniería en Calidad Ambiental",
     academic_course2_title: "Formación en Front-End Development",
     academic_course3_title: "Nanogrado en Marketing Digital",
-    academic_course3_subtitle: "En curso - Udacity",
+    academic_course3_subtitle: "En curso - Udacity - OneTen & Accenture Scholarship Program",
     // Experiencia Profesional
     experience_title: "Experiencia Profesional",
-    experience_project1_title: "Encriptador de texto",
-    experience_project1_desc: "Challenge Alura Codificador",
-    experience_project2_title: "Juego del Ahorcado",
-    experience_project2_desc: "Challenge Oracle",
-    experience_repo_btn: "Repositorio",
-    experience_demo_btn: "Ver demo",
+    experience_update_notice: "Bajo actualización. Por favor revisa en un par de días.",
     // Contacto
     contact_title: "Contacto",
     contact_subtitle1: "¿Quieres contactarme?",
@@ -70,33 +67,30 @@ const translations = {
     menu_projects: "Projects",
     menu_contact_email: "rramirezfiallos@hotmail.com",
     menu_contact_link: "Contact",
-    title_bio: "Hello, my name is Ron and I'm very into technology and constant learning",
+    title_bio: "Hello, my name is Ron and I am an enthusiast of technology and constant learning",
     title_subsection: "Environmental Quality Engineer, with a passion for constant education, enthusiastic about technology, entrepreneurship, and contact sports.",
     title_github: "Github",
     title_linkedin: "Linkedin",
     title_instagram: "Instagram",
     title_resume: "Resume",
-    // About Me
+    // About Me (with split keys)
     about_title: "About me",
-    about_p1: "In 2024, I have ventured into the Technology Industry to offer my professional services and create a company.",
-    about_p2: 'I graduated as an Environmental Engineer and have 10 years of work experience in the public, private, and international cooperation sectors in roles related to environmental management, sustainable development, business management, and entrepreneurship. In 2022 I founded the startup "The Party Wagon" and in 2023 a programming school for children "Algorithmics School-Chinandega Branch".',
+    about_p1: "In 2024, I ventured into the Technology Industry to offer my professional services and create a company.",
+    about_p2_part1: 'I graduated as an Environmental Engineer and I have 10 years of work experience in the public, private, and international cooperation sectors in roles related to environmental management, sustainable development, business management, and entrepreneurship. In 2022 I launched a Mobile Bar & Boba Tea Shop',
+    about_p2_part2: ' and in 2023 a programming school for children ',
+    about_p2_part3: '.',
     // Skills & Hobbies
     skills_title: "Skills",
     hobbies_title: "Hobbies",
     // Academic Training
     academic_title: "Academic Training",
-    academic_course1_title: "Environmental Engineering",
-    academic_course2_title: "Front-End Devolopment",
-    academic_course3_title: "Nanodegree in Digital Marketing",
-    academic_course3_subtitle: "In progress - 2025 OneTen & Accenture Scholarship Program",
+    academic_course1_title: "Environmental Quality Engineering",
+    academic_course2_title: "Front-End Development Training",
+    academic_course3_title: "Digital Marketing Nanodegree",
+    academic_course3_subtitle: "In progress - Udacity - OneTen & Accenture Scholarship Program",
     // Professional Experience
     experience_title: "Professional Experience",
-    experience_project1_title: "Text Encryptor",
-    experience_project1_desc: "Alura Encoder Challenge",
-    experience_project2_title: "Hangman Game",
-    experience_project2_desc: "Oracle Challenge",
-    experience_repo_btn: "Repository",
-    experience_demo_btn: "View demo",
+    experience_update_notice: "Under construction. Please check back in a couple of days.",
     // Contact
     contact_title: "Contact",
     contact_subtitle1: "Do you want to contact me?",
@@ -148,8 +142,12 @@ const setLanguage = (lang) => {
     localStorage.setItem('language', lang);
 
     // Actualiza el estilo de los botones de idioma
-    document.getElementById('lang-es').classList.toggle('active', lang === 'es');
-    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    const langEsButton = document.getElementById('lang-es');
+    const langEnButton = document.getElementById('lang-en');
+    if (langEsButton && langEnButton) {
+        langEsButton.classList.toggle('active', lang === 'es');
+        langEnButton.classList.toggle('active', lang === 'en');
+    }
 };
 
 // Función para obtener el idioma actual
@@ -162,8 +160,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const langES = document.getElementById('lang-es');
     const langEN = document.getElementById('lang-en');
 
-    langES.addEventListener('click', () => setLanguage('es'));
-    langEN.addEventListener('click', () => setLanguage('en'));
+    if (langES && langEN) {
+        langES.addEventListener('click', () => setLanguage('es'));
+        langEN.addEventListener('click', () => setLanguage('en'));
+    }
 
     // Establece el idioma inicial al cargar la página
     setLanguage(getCurrentLanguage());
